@@ -22,14 +22,19 @@ export const TopRateComics = () => {
         </Text>
         <Box
           justifyContent="space-between"
-          display={["column", "column", "flex"]}
+          display="flex"
+          flexDir={["column", "column", "row"]}
+          alignItems="center"
+          h="100%"
+          pb="16px"
         >
           {mock.map((title) => (
             <Flex
               key={title.title}
               cursor="pointer"
               w="100%"
-              maxW="282px"
+              h={["310px"]}
+              maxW={["530px", "530px", "332px"]}
               justifyContent="center"
               borderRadius="10px 10px 0px 0px"
             >
@@ -43,7 +48,7 @@ export const TopRateComics = () => {
               />
               <Flex
                 alignItems="center"
-                bottom={["none", "none", "0px"]}
+                bottom={["none", "none", "-6px"]}
                 opacity="95%"
                 h="113px"
                 position="absolute"
