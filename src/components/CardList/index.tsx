@@ -29,6 +29,8 @@ export const CardList = ({ data, title }: CardListProps) => {
   const { increment } = usePagination();
   const { isOpen, onOpen, onClose } = useDisclosure();
 
+  let dataLength = data?.length;
+
   return (
     <>
       <Flex w="100%" maxW="974px" pb="16px" flexDir="column" gap="8px">
@@ -91,9 +93,11 @@ export const CardList = ({ data, title }: CardListProps) => {
             onClose={onClose}
           />
         </SimpleGrid>
-        <Flex justifyContent="flex-end">
-          <Button onClick={increment}>Mostrar mais</Button>
-        </Flex>
+        {(dataLength as number) >= 6 && (
+          <Flex justifyContent="flex-end">
+            <Button onClick={increment}>Mostrar mais</Button>
+          </Flex>
+        )}
       </Flex>
     </>
   );

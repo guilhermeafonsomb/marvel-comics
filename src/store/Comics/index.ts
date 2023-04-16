@@ -3,6 +3,7 @@ import { IBanner } from "../../data/interfaces/banner";
 import { ICharacter } from "../../data/interfaces/characters";
 import { IComics } from "../../data/interfaces/comics";
 import {
+  findByName,
   getBannerSaga,
   listCharacters,
   listComics,
@@ -18,6 +19,7 @@ type ComicsState = {
   getBannerSaga: () => Promise<void>;
   listCharacters: (limit: number) => Promise<void>;
   infoToModal: (data: IComics & ICharacter & IBanner) => Promise<void>;
+  findByName: (name: string) => Promise<void>;
 };
 
 export const useComicsStore = create<ComicsState>((set) => ({
@@ -55,6 +57,14 @@ export const useComicsStore = create<ComicsState>((set) => ({
     set((state) => ({
       ...state,
       infoToModalData: data,
+    }));
+  },
+
+  findByName: async (name) => {
+    const reponse = await findByName(name);
+    set((state) => ({
+      ...state,
+      characters: reponse,
     }));
   },
 }));

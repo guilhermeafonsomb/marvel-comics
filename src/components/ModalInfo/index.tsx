@@ -33,7 +33,6 @@ export const ModalInfo = ({
   data,
   overlay,
 }: ModalInfoProps) => {
-  console.log(data, "hero");
   return (
     <>
       <Modal

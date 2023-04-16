@@ -24,7 +24,7 @@ function getHashUrl(): string {
 export async function listComics(limit: number): Promise<IComics[]> {
   const hashUrl = getHashUrl();
 
-  return api
+  return await api
     .get(`comics?format=magazine&formatType=comic&limit=${limit}&${hashUrl}`)
     .then((response) => {
       return response.data.data.results;
@@ -47,4 +47,21 @@ export async function listCharacters(limit: number): Promise<ICharacter[]> {
     .then((response) => {
       return response.data.data.results;
     });
+}
+
+export async function findByName(name: string): Promise<any> {
+  const hashUrl = getHashUrl();
+
+  if (!name.length) {
+    listCharacters(6);
+  }
+  try {
+    return await api
+      .get(`characters?name=${name}&${hashUrl}`)
+      .then((response) => {
+        return response.data.data.results;
+      });
+  } catch (error) {
+    listCharacters(6);
+  }
 }
