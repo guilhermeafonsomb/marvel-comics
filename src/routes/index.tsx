@@ -2,6 +2,7 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 
 import { Flex } from "@chakra-ui/react";
 import { Navbar } from "../components/Navbar";
+import { Characters } from "../pages/Characters";
 import { Home } from "../pages/Home";
 
 export const MyRoutes = () => {
@@ -20,6 +21,7 @@ export const MyRoutes = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Navigate to="/" replace />} />
+          <Route path="/characters" element={<Characters />} />
         </Routes>
       </Flex>
       <Navbar />

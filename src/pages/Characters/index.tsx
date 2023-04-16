@@ -1,21 +1,19 @@
 import { useEffect } from "react";
-
-import { BannerCard } from "../../components/BannerCard";
 import { CardList } from "../../components/CardList";
 import { useComicsStore } from "../../store/Comics";
 import { usePagination } from "../../store/Pagination";
 
-export const Home = () => {
-  const { setComics, comics } = useComicsStore();
+export const Characters = () => {
+  const { listCharacters, characters } = useComicsStore();
   const { limit } = usePagination();
 
   useEffect(() => {
-    setComics(limit);
+    listCharacters(limit);
   }, [limit]);
+
   return (
     <>
-      <BannerCard />
-      <CardList title="Top rate comics" data={comics} />
+      <CardList data={characters} title="Characters" />
     </>
   );
 };
