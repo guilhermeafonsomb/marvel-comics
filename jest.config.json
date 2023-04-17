@@ -1,0 +1,45 @@
+{
+  "bail": 1,
+  "verbose": true,
+  "clearMocks": true,
+  "collectCoverage": true,
+  "coverageDirectory": "coverage",
+  "coverageProvider": "v8",
+  "testEnvironment": "jsdom",
+  "setupFilesAfterEnv": ["<rootDir>/src/test/setup.ts"],
+  "collectCoverageFrom": [
+    "src/store/**/*.{ts,tsx}",
+    "src/pages/**/*.{ts,tsx}",
+    "src/components/**/*.{ts,tsx}"
+  ],
+  "transform": {
+    "^.+\\.(t|j)sx?$": [
+      "@swc/jest",
+      {
+        "jsc": {
+          "parser": {
+            "syntax": "typescript",
+            "tsx": true,
+            "decorators": true
+          },
+          "keepClassNames": true,
+          "transform": {
+            "legacyDecorator": true,
+            "decoratorMetadata": true,
+            "react": {
+              "runtime": "automatic"
+            }
+          }
+        },
+        "module": {
+          "type": "es6",
+          "noInterop": false
+        }
+      }
+    ]
+  },
+  "moduleNameMapper": {
+    "^@/(.*)$": "<rootDir>/src/$1",
+    "^.+\\.(css|styl|less|sass|scss|png|svg|jpg|ttf|woff|woff2)$": "jest-transform-stub"
+  }
+}

@@ -19,8 +19,6 @@ export const Characters = () => {
     listCharacters(limit);
   }, [limit]);
 
-  console.log(characters.length, "characters");
-
   return (
     <>
       <Form />

@@ -45,6 +45,7 @@ export async function listCharacters(limit: number): Promise<ICharacter[]> {
   return await api
     .get(`characters?limit=${limit}&${hashUrl}`)
     .then((response) => {
+      console.log(response.data.data.results[0]);
       return response.data.data.results;
     });
 }
