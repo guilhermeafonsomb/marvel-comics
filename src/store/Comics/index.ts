@@ -1,13 +1,14 @@
 import { create } from "zustand";
-import { IBanner } from "../../data/interfaces/banner";
-import { ICharacter } from "../../data/interfaces/characters";
-import { IComics } from "../../data/interfaces/comics";
+
+import { IBanner } from "@/data/interfaces/banner";
+import { ICharacter } from "@/data/interfaces/characters";
+import { IComics } from "@/data/interfaces/comics";
 import {
   findByName,
   getBannerSaga,
   listCharacters,
   listComics,
-} from "../../services/marvel.service";
+} from "@/services/index.service";
 
 type ComicsState = {
   comics: IComics[];

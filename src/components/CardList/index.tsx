@@ -8,11 +8,11 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 
-import { IBanner } from "../../data/interfaces/banner";
-import { ICharacter } from "../../data/interfaces/characters";
-import { IComics } from "../../data/interfaces/comics";
-import { useComicsStore } from "../../store/Comics";
-import { usePagination } from "../../store/Pagination";
+import { IBanner } from "@/data/interfaces/banner";
+import { ICharacter } from "@/data/interfaces/characters";
+import { IComics } from "@/data/interfaces/comics";
+import { useComicsStore } from "@/store/Comics";
+import { usePagination } from "@/store/Pagination";
 import { ModalInfo } from "../ModalInfo";
 
 type dataType = IComics[] & ICharacter[] & IBanner[];

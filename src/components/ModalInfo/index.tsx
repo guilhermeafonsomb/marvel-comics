@@ -14,9 +14,9 @@ import {
 } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
 
-import { IBanner } from "../../data/interfaces/banner";
-import { ICharacter } from "../../data/interfaces/characters";
-import { IComics } from "../../data/interfaces/comics";
+import { IBanner } from "@/data/interfaces/banner";
+import { ICharacter } from "@/data/interfaces/characters";
+import { IComics } from "@/data/interfaces/comics";
 
 type dataType = IComics & ICharacter & IBanner;
 

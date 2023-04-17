@@ -1,10 +1,11 @@
 import { Box, Flex, Image, Text, useDisclosure } from "@chakra-ui/react";
 
 import { useEffect } from "react";
-import { IBanner } from "../../data/interfaces/banner";
-import { ICharacter } from "../../data/interfaces/characters";
-import { IComics } from "../../data/interfaces/comics";
-import { useComicsStore } from "../../store/Comics";
+
+import { IBanner } from "@/data/interfaces/banner";
+import { ICharacter } from "@/data/interfaces/characters";
+import { IComics } from "@/data/interfaces/comics";
+import { useComicsStore } from "@/store/Comics";
 import { ModalInfo } from "../ModalInfo";
 
 export const BannerCard = () => {

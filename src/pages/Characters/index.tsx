@@ -1,15 +1,15 @@
 import { Heading, Image } from "@chakra-ui/react";
 import { useEffect } from "react";
 
-import { CardList } from "../../components/CardList";
-import { IBanner } from "../../data/interfaces/banner";
-import { ICharacter } from "../../data/interfaces/characters";
-import { IComics } from "../../data/interfaces/comics";
-import { useComicsStore } from "../../store/Comics";
-import { usePagination } from "../../store/Pagination";
 import { Form } from "./components/Form";
 
-import spiderMan from "../../assets/spider.png";
+import spiderMan from "@/assets/spider.png";
+import { CardList } from "@/components/CardList";
+import { IBanner } from "@/data/interfaces/banner";
+import { ICharacter } from "@/data/interfaces/characters";
+import { IComics } from "@/data/interfaces/comics";
+import { useComicsStore } from "@/store/Comics";
+import { usePagination } from "@/store/Pagination";
 
 export const Characters = () => {
   const { listCharacters, characters } = useComicsStore();

@@ -1,7 +1,7 @@
+import { useComicsStore } from "@/store/Comics";
 import { Flex, FormControl, FormLabel, Input } from "@chakra-ui/react";
 
 import { useCallback } from "react";
-import { useComicsStore } from "../../../../store/Comics";
 
 export const Form = () => {
   const { findByName, listCharacters } = useComicsStore();
