@@ -15,6 +15,7 @@ export const Home = () => {
   useEffect(() => {
     setComics(limit);
   }, [limit]);
+
   return (
     <>
       <BannerCard />

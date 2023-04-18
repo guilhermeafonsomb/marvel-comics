@@ -8,9 +8,8 @@
   "testEnvironment": "jsdom",
   "setupFilesAfterEnv": ["<rootDir>/src/test/setup.ts"],
   "collectCoverageFrom": [
-    "src/store/**/*.{ts,tsx}",
     "src/pages/**/*.{ts,tsx}",
-    "src/components/**/*.{ts,tsx}"
+    "src/service/**/*.{ts,tsx}"
   ],
   "transform": {
     "^.+\\.(t|j)sx?$": [

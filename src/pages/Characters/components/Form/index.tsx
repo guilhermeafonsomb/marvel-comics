@@ -20,9 +20,7 @@ export const Form = () => {
     <>
       <Flex w="100%" maxW="974px">
         <FormControl>
-          <FormLabel color="white">
-            Search character (obs. type the complete name)
-          </FormLabel>
+          <FormLabel color="white">Search character</FormLabel>
           <Input
             bg="white"
             onChange={(e) => {

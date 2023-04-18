@@ -49,9 +49,9 @@ describe("Marvel Service", () => {
 
   describe("findByName", () => {
     it("should return a find by name with the specified limit", async () => {
-      const name = "thor";
+      const name = "Adam Warlock";
       const mockApi = new MockAdapter(axios);
-      const api = `${preURL}characters?name=${name}&apikey=${apiKey}`;
+      const api = `${preURL}nameStartsWith?name=${name}&apikey=${apiKey}`;
 
       mockApi.onGet(api).reply(200, {
         data: {
@@ -60,8 +60,6 @@ describe("Marvel Service", () => {
       });
 
       const result = await findByName(name);
-
-      console.log(result);
 
       expect(result).toEqual(findByNameMock);
     });
